@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MovieSchema = new Schema({
-  directo_id: Schema.Types.ObjectId,
+  director_id: Schema.Types.ObjectId,
   title: {
     type: String,
     required: true,
@@ -17,4 +17,4 @@ const MovieSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("movie", MovieSchema);
+module.exports = mongoose.model("movies", MovieSchema);

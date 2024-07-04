@@ -11,7 +11,16 @@ async function createMovie(req, res) {
 
 async function getAllMovies(req, res) {
   try {
-    const movies = await Movie.find({});
+    const movies = await Movie.aggregate([
+      {
+        $lookup: {
+          from: "directors",
+          localField: "director_id",
+          foreignField: "_id",
+          as: "director",
+        },
+      },
+    ]);
     res.json(movies);
   } catch (err) {
     res.json(err);

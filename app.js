@@ -6,6 +6,7 @@ const path = require("path");
 
 const indexRoute = require("./routes/index");
 const movieRoute = require("./routes/movieRoute.js");
+const directorRoute = require("./routes/directorRoute.js");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRoute);
 app.use("/api/movies", movieRoute);
+app.use("/api/directors", directorRoute);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
