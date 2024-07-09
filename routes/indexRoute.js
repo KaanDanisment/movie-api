@@ -4,7 +4,7 @@ const router = Router();
 
 /* GET index page. */
 router.get("/", (req, res) => {
-  res.status(200).send("Home Page");
+  res.status(200).send("Home Page Test");
 });
 router.route("/register").post(authController.createUser);
 router.route("/login").post(authController.loginUser);
