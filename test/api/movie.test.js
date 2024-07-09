@@ -114,11 +114,11 @@ describe("/api/movies tests", () => {
       chai
         .request(server)
         .delete("/api/movies/" + movieId)
-        .set("x-access-token", "sadas")
+        .set("x-access-token", token)
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a("object");
-          done();
+          //done();
         });
     });
   });
